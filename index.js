@@ -5,6 +5,10 @@ require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.get("/", (req, res) => {
+  res.send("Hello, Samsung world!");
+});
+
 app.get("/on", async (req, res) => {
   try {
     const response = await axios.put(
